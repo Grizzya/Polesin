@@ -1,0 +1,68 @@
+
+.hero-section {
+    position: relative; /* Diperlukan untuk lapisan gelap (overlay) */
+    height: 100vh;
+    display: flex;
+    align-items: center; /* Membuat konten vertikal di tengah */
+    padding-left: 5%; /* Memberi jarak kiri untuk konten */
+    padding-right: 5%; /* Memberi jarak kanan untuk konten */
+
+    /* INI BAGIAN PENTINGNYA: Panggil background image di sini */
+    /* GANTI 'hero-image.jpg' dengan nama file gambar Anda */
+    background-image: url("../images/DSC00378.JPG");
+    background-size: cover;
+    background-position: center;
+    color: white; /* Membuat teks di dalamnya defaultnya putih */
+}
+
+/* Lapisan Gelap di atas Gambar */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Ubah angka terakhir untuk tingkat kegelapan */
+    z-index: 1;
+}
+
+/* Konten di dalam Hero Section (teks dan tombol) */
+.hero-content {
+    position: relative;
+    padding-top: 150px; /* Beri jarak dari atas agar tidak tertutup header */
+    z-index: 2; /* Memastikan konten berada di atas lapisan gelap */
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: white;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: white;
+}
+
+/* Tombol "Contact Us" */
+.cta-button {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #0D4884;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #FEDE30;
+    transform: translateY(-2px);
+}
